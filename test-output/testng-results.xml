@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-10-31T15:27:32 PDT" name="Suite" finished-at="2019-10-31T15:28:46 PDT" duration-ms="73857">
+    <groups>
+    </groups>
+    <test started-at="2019-10-31T15:27:32 PDT" name="Test" finished-at="2019-10-31T15:28:46 PDT" duration-ms="73857">
+      <class name="SeleniumTests.MultithreadedSelenium.GoogleTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:32 PDT" name="setup" finished-at="2019-10-31T15:27:53 PDT" duration-ms="20890" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:32 PDT" name="setup" finished-at="2019-10-31T15:27:48 PDT" duration-ms="15782" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:32 PDT" name="setup" finished-at="2019-10-31T15:27:38 PDT" duration-ms="5467" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:32 PDT" name="setup" finished-at="2019-10-31T15:27:43 PDT" duration-ms="10631" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:32 PDT" name="setup" finished-at="2019-10-31T15:27:58 PDT" duration-ms="26018" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="test3()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:38 PDT" name="test3" finished-at="2019-10-31T15:27:59 PDT" duration-ms="21446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test3 -->
+        <test-method signature="TestvalidateLogInTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:43 PDT" name="TestvalidateLogInTest" data-provider="dp" finished-at="2019-10-31T15:28:13 PDT" duration-ms="30192" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[nonrestricteduser@qw.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Restricted User]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestvalidateLogInTest -->
+        <test-method signature="test4()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:48 PDT" name="test4" finished-at="2019-10-31T15:27:59 PDT" duration-ms="11315" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test4 -->
+        <test-method signature="test1()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:53 PDT" name="test1" finished-at="2019-10-31T15:27:59 PDT" duration-ms="6147" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test2()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:58 PDT" name="test2" finished-at="2019-10-31T15:27:59 PDT" duration-ms="903" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:59 PDT" name="tearDown" finished-at="2019-10-31T15:27:59 PDT" duration-ms="23" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:59 PDT" name="tearDown" finished-at="2019-10-31T15:27:59 PDT" duration-ms="34" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:59 PDT" name="setup" finished-at="2019-10-31T15:28:05 PDT" duration-ms="5638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:59 PDT" name="tearDown" finished-at="2019-10-31T15:28:05 PDT" duration-ms="5572" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:27:59 PDT" name="tearDown" finished-at="2019-10-31T15:28:05 PDT" duration-ms="5517" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="test5()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:28:05 PDT" name="test5" finished-at="2019-10-31T15:28:05 PDT" duration-ms="679" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test5 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:28:05 PDT" name="tearDown" finished-at="2019-10-31T15:28:05 PDT" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:28:13 PDT" name="tearDown" finished-at="2019-10-31T15:28:13 PDT" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:28:13 PDT" name="setup" finished-at="2019-10-31T15:28:19 PDT" duration-ms="5779" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="TestvalidateLogInTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:28:19 PDT" name="TestvalidateLogInTest" data-provider="dp" finished-at="2019-10-31T15:28:46 PDT" duration-ms="27177" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[restricteduser@qw.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[456789]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Non Restricted User]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestvalidateLogInTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumTests.MultithreadedSelenium.GoogleTest@4d18aa28]" started-at="2019-10-31T15:28:46 PDT" name="tearDown" finished-at="2019-10-31T15:28:46 PDT" duration-ms="21" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- SeleniumTests.MultithreadedSelenium.GoogleTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
