@@ -21,7 +21,7 @@ import resources.PropRetriever;
 public class GoogleTest extends DriverFactory{
 	private PropRetriever props = new PropRetriever();
 	private Logger log = LogManager.getLogger();
-	DriverFactory drvFact = new DriverFactory();
+	//DriverFactory drvFact = new DriverFactory();
 	//private WebDriver driver;
 	 
 	
@@ -30,49 +30,49 @@ public class GoogleTest extends DriverFactory{
 	
 	@BeforeMethod
     public void setup() throws IOException {
-       drvFact.newDriver();
+      newDriver();
     }
 	
 	
 
     @Test
     public void test1() {
-    	WebDriver driver = drvFact.getDriver();
+    	WebDriver driver = getDriver();
         driver.navigate().to("https:\\www.google.com");
         Assert.assertEquals(driver.getTitle(), "Google");
     }
 
     @Test
     public void test2() {
-    	WebDriver driver = drvFact.getDriver();
+    	WebDriver driver = getDriver();
         driver.navigate().to("https:\\www.google.com");
         Assert.assertEquals(driver.getTitle(), "Google");
     }
     
     @Test
     public void test3() {
-    	WebDriver driver = drvFact.getDriver();
+    	WebDriver driver = getDriver();
         driver.navigate().to("https:\\www.google.com");
         Assert.assertEquals(driver.getTitle(), "Google");
     }
 
     @Test
     public void test4() {
-    	WebDriver driver = drvFact.getDriver();
+    	WebDriver driver = getDriver();
         driver.navigate().to("https:\\www.google.com");
         Assert.assertEquals(driver.getTitle(), "Google");
     }
     
     @Test
     public void test5() {
-    	WebDriver driver =drvFact.getDriver();
+    	WebDriver driver = getDriver();
         driver.navigate().to("https:\\www.google.com");
         Assert.assertEquals(driver.getTitle(), "Google");
     }
     
     @Test(dataProvider = "dp")
 	public void TestvalidateLogInTest(String email, String password, String text) throws IOException, InterruptedException {
-        WebDriver driver = drvFact.getDriver();
+        WebDriver driver = getDriver();
 		driver.get(props.getProp("url"));
 		log.info("Navigated to Home Page");
 		LandingPage lp = new LandingPage(driver);
@@ -110,7 +110,7 @@ public class GoogleTest extends DriverFactory{
     @AfterMethod
     public void tearDown() {
        
-        WebDriver driver = drvFact.getDriver();
+        WebDriver driver = getDriver();
         driver.quit();
     }
     
