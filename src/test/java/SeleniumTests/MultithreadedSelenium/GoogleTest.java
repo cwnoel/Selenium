@@ -31,8 +31,6 @@ public class GoogleTest extends DriverFactory{
 	@BeforeMethod
     public void setup() throws IOException {
        drvFact.newDriver();
-       //  System.out.println(props.getProp("browser"));
-       //  driver = DriverFactory.getDriver();
     }
 	
 	
@@ -116,9 +114,4 @@ public class GoogleTest extends DriverFactory{
         driver.quit();
     }
     
-//    @AfterTest
-//    public void tearDown() {
-//        
-//        driver.quit();
-//    }
 }

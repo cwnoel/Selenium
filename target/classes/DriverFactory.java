@@ -15,7 +15,7 @@ public class DriverFactory {
 
 	private ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 
-	public synchronized void newDriver() {
+	public synchronized void newDriver() throws MalformedURLException {
 
 		final PropRetriever prop = new PropRetriever();
 		final String browserName = prop.getProp("browser");
@@ -43,9 +43,18 @@ public class DriverFactory {
 			}
 		} else if (browserName.contains("firefox")) {
 			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir").toString()
-					+ prop.getProp("firefoxdriver"));
+					+ prop.getProp("geckodriver"));
 			FirefoxOptions options = optRet.getFireFoxOptions();
+			if (remote.contains("true")) {
+				try {
+					driver.set(new RemoteWebDriver(new URL(grid),options));
+				} catch (MalformedURLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}else {
 			driver.set(new FirefoxDriver(options));
+			}
 		}else if (browserName.contains("edge")) {
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir").toString()
 					+ prop.getProp("msedgedriver"));
@@ -56,12 +65,7 @@ public class DriverFactory {
 
 	}
 
-	// USE THIS FOR GRID
-//  try {
-//      drivers.set(new RemoteWebDriver(new URL(grid),options));
-//  } catch (MalformedURLException e) {
-//      e.printStackTrace();
-//  }
+	
 
 	public synchronized WebDriver getDriver() {
 		return driver.get();
