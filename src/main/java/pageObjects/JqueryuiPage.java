@@ -13,31 +13,30 @@ public class JqueryuiPage {
 		this.driver = driver;
 	}
 	
-	private By draggable = By.xpath("//aside[@class='widget']/ul/li/a[contains(text(),'Draggable')]");
-	private By droppable = By.xpath("//aside[@class='widget']/ul/li/a[contains(text(),'Droppable')]");
-	private By dragItem = By.id("Draggable");
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	private By draggable = By.xpath("//a[contains(text(),'Draggable')]");
+	private By droppable = By.xpath("//a[contains(text(),'Droppable')]");
+	private By resizable = By.xpath("//a[contains(text(),'Resizable')]");
+	private By demoFrame = By.xpath("//iframe[@class='demo-frame']");
 	
 	public WebElement getDraggable() {
 		return driver.findElement(draggable);
 		
-	}
-	
+	}	
 	public WebElement getDroppable() {
 		return driver.findElement(droppable);
 		
 	}
 	
-	public WebElement getDragItem () {
-		return driver.findElement(dragItem);
+	public WebElement getResizable() {
+		return driver.findElement(resizable);
+		
 	}
-
+	
+	public WebElement getDemoFrame () {
+		return driver.findElement(demoFrame);
+	}
+	
+	public void switchToDemoFrame() {
+		driver.switchTo().frame(getDemoFrame());
+	}
 }

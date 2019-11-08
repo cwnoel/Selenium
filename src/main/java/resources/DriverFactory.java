@@ -34,7 +34,6 @@ public class DriverFactory {
 				try {
 					driver.set(new RemoteWebDriver(new URL(grid),options));
 				} catch (MalformedURLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}else {
@@ -49,7 +48,6 @@ public class DriverFactory {
 				try {
 					driver.set(new RemoteWebDriver(new URL(grid),options));
 				} catch (MalformedURLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}else {
