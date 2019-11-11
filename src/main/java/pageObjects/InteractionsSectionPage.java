@@ -17,6 +17,7 @@ public class InteractionsSectionPage {
 	private By dropToItem = By.id("droppable");	
 	private By resizeWindow = By.id("resizable");
 	private By resizeHandle = By.cssSelector("#resizable .ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se");
+	private By selectable2 = By.xpath("//li[contains(text(),'Item 2')]");
 	
 	
 	public WebElement getDragItem () {
@@ -35,5 +36,8 @@ public class InteractionsSectionPage {
 		return driver.findElement(resizeHandle);
 	}
 	
+	public WebElement getSelectable2() {
+		return driver.findElement(selectable2);
+	}
 
 }

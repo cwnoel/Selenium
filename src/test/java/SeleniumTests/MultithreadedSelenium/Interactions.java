@@ -27,7 +27,7 @@ public class Interactions extends DriverFactory {
 	private Actions myAct;
 
 	@BeforeTest
-	public void testSetup() throws MalformedURLException {
+	public void testSetup() throws MalformedURLException  {
 		newDriver();
 		driver = getDriver();
 		jqPage = new JqueryuiPage(driver);
@@ -69,7 +69,7 @@ public class Interactions extends DriverFactory {
 	}
 
 	@Test
-	public void testResizable() throws InterruptedException {
+	public void testResizable(){
 		driver.get("https://jqueryui.com/");
 		jqPage.getResizable().click();
 		jqPage.switchToDemoFrame();
@@ -86,9 +86,20 @@ public class Interactions extends DriverFactory {
 		log.info("Ending width was correct");
 		log.info("Resize is correct");
 	}
+	
+	@Test
+	public void testSelectable(){
+		driver.get("https://jqueryui.com/");
+		jqPage.getSelectable().click();
+		jqPage.switchToDemoFrame();
+		WebElement item2 = dp.getSelectable2();
+		item2.click();
+		Assert.assertTrue(item2.getAttribute("class").contains("ui-selected"));
+		log.info("Item 2 was selected");
+	}
 
 	@AfterTest
-	public void cleanup() throws MalformedURLException {
+	public void cleanup(){
 		driver.quit();
 
 	}
