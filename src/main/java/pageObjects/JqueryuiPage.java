@@ -17,6 +17,7 @@ public class JqueryuiPage {
 	private By droppable = By.xpath("//a[contains(text(),'Droppable')]");
 	private By resizable = By.xpath("//a[contains(text(),'Resizable')]");
 	private By selectable = By.xpath("//a[contains(text(),'Selectable')]");
+	private By sortable = By.xpath("//a[contains(text(),'Sortable')]");
 	private By demoFrame = By.xpath("//iframe[@class='demo-frame']");
 	
 	public WebElement getDraggable() {
@@ -35,6 +36,11 @@ public class JqueryuiPage {
 	
 	public WebElement getSelectable() {
 		return driver.findElement(selectable);
+		
+	}
+	
+	public WebElement getSortable() {
+		return driver.findElement(sortable);
 		
 	}
 	

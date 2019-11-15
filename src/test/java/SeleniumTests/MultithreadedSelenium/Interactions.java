@@ -2,10 +2,15 @@ package SeleniumTests.MultithreadedSelenium;
 
 import static org.testng.Assert.assertTrue;
 
+import java.awt.ItemSelectable;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -97,6 +102,30 @@ public class Interactions extends DriverFactory {
 		Assert.assertTrue(item2.getAttribute("class").contains("ui-selected"));
 		log.info("Item 2 was selected");
 	}
+	
+	@Test
+	public void testSortable() throws InterruptedException{
+		driver.get("https://jqueryui.com/");
+		jqPage.getSortable().click();
+		jqPage.switchToDemoFrame();
+		WebElement sortItem1 = dp.getSortItem1();
+		System.out.println("Original order: ");
+		dp.printSortItems();
+		myAct.dragAndDropBy(sortItem1, 0,50).perform();
+		System.out.println("Order after sort: ");
+		dp.printSortItems();
+		ArrayList<WebElement> sorted = dp.getSortItems();
+		Assert.assertTrue(sorted.get(0).getText().contentEquals("Item 2"));
+		
+	    }
+		
+		
+		
+		
+		
+		
+	
+	
 
 	@AfterTest
 	public void cleanup(){
