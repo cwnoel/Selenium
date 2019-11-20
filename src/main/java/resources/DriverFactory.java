@@ -13,25 +13,21 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class DriverFactory {
 	
-public DriverFactory(){	
-	PropRetriever prop = new PropRetriever();
-	String mvnBrowser = prop.getProp("mvnbrowser");
-	if (mvnBrowser.contains("true")){
-		browser = System.getProperty("browser");
-		}else {
-			browser = prop.getProp("browser");
-		}
-}
-	private String browser;
-	
-	private ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 
-	public synchronized void newDriver() throws MalformedURLException {
+	private String browser;
+	private ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+	
+	public DriverFactory(){	
+		PropRetriever prop = new PropRetriever();
+		String mvnBrowser = prop.getProp("mvnbrowser");
+		browser = setBrowserProp(mvnBrowser,prop);
+		
+	}
+
+	public synchronized void newDriver()  {
 
 		final PropRetriever prop = new PropRetriever();
 		final String browserName = browser;
-		//final String browserName = prop.getProp("browser");
-		//final String browserName = System.getProperty("browser");
 		final String remote = prop.getProp("remote");
 		final String grid = prop.getProp("grid");
 		final OptionsRetriever optRet = new OptionsRetriever();
@@ -75,7 +71,18 @@ public DriverFactory(){
 
 	}
 
+	private String setBrowserProp(String mvnProp, PropRetriever prop){
+		if (mvnProp.contains("true")){
+			browser = System.getProperty("browser");
+			}else {
+				browser = prop.getProp("browser");
+			}
+		return browser;
+	}
 	
+	public String getBrowser() {
+		return browser;
+	}
 
 	public synchronized WebDriver getDriver() {
 		return driver.get();

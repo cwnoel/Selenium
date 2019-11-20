@@ -1,8 +1,11 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class JqueryuiPage {
 	
@@ -13,13 +16,19 @@ public class JqueryuiPage {
 		this.driver = driver;
 	}
 	
+	//Interactions
 	private By draggable = By.xpath("//a[contains(text(),'Draggable')]");
 	private By droppable = By.xpath("//a[contains(text(),'Droppable')]");
 	private By resizable = By.xpath("//a[contains(text(),'Resizable')]");
 	private By selectable = By.xpath("//a[contains(text(),'Selectable')]");
 	private By sortable = By.xpath("//a[contains(text(),'Sortable')]");
+	//Widgets
+	private By accordion = By.xpath("//a[contains(text(),'Accordion')]");
+	
 	private By demoFrame = By.xpath("//iframe[@class='demo-frame']");
 	
+	
+	//Interactions Getters
 	public WebElement getDraggable() {
 		return driver.findElement(draggable);
 		
@@ -46,6 +55,11 @@ public class JqueryuiPage {
 	
 	public WebElement getDemoFrame () {
 		return driver.findElement(demoFrame);
+	}
+	
+	//Widgets getters
+	public WebElement getAccordion() {
+		return driver.findElement(accordion);
 	}
 	
 	public void switchToDemoFrame() {

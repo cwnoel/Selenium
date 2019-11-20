@@ -1,15 +1,12 @@
 package pageObjects;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class InteractionsSectionPage {
 	
@@ -20,7 +17,8 @@ public class InteractionsSectionPage {
 		this.driver = driver;
 	}
 	
-	private By dragItem = By.id("draggable");
+	private By dragItem2 = By.id("draggable");
+	private By dragItem = By.xpath("//p[contains(text(),'Drag me around')]");
 	private By dropToItem = By.id("droppable");	
 	private By resizeWindow = By.id("resizable");
 	private By resizeHandle = By.cssSelector("#resizable .ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se");
@@ -33,7 +31,16 @@ public class InteractionsSectionPage {
 		return driver.findElement(dragItem);
 	}
 	
+	public WebElement getDragItem2 () {
+	//	new WebDriverWait(driver,5).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(By.id("draggable")));
+
+		return driver.findElement(dragItem2);
+		
+	}
+	
 	public WebElement getDropToItem() {
+	//	new WebDriverWait(driver,5).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(By.id("droppable")));
+
 		return driver.findElement(dropToItem);
 	}
 	
