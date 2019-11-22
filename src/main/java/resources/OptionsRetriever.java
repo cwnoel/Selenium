@@ -2,6 +2,7 @@ package resources;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriverLogLevel;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.CapabilityType;
@@ -29,6 +30,8 @@ public FirefoxOptions getFireFoxOptions() {
 	if (prop.getProp("headless").contains("true")) {
 		options.setHeadless(true);
 	}
+	
+	options.setLogLevel(FirefoxDriverLogLevel.TRACE);
 	options.setCapability(CapabilityType.BROWSER_NAME, BrowserType.FIREFOX);
 	options.setCapability(CapabilityType.PLATFORM_NAME, Platform.WINDOWS);
 	return options;
