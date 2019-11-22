@@ -30,15 +30,11 @@ public class InteractionsSectionPage {
 	}
 	
 	public WebElement getDragItem2 () {
-	//	new WebDriverWait(driver,5).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(By.id("draggable")));
-
 		return driver.findElement(dragItem2);
 		
 	}
 	
 	public WebElement getDropToItem() {
-	//	new WebDriverWait(driver,5).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(By.id("droppable")));
-
 		return driver.findElement(dropToItem);
 	}
 	
