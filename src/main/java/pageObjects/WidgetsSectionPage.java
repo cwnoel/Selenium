@@ -27,7 +27,7 @@ public class WidgetsSectionPage {
 	}
 	
 	public WebElement getSection2Text() {
-		WebDriverWait myWait = new WebDriverWait(driver, 2000);
+		WebDriverWait myWait = new WebDriverWait(driver, 2);
 		myWait.until(ExpectedConditions.visibilityOf(driver.findElement(section2Text)));
 		return driver.findElement(section2Text);
 	}

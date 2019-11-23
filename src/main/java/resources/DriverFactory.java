@@ -72,11 +72,6 @@ public class DriverFactory {
 	}
 
 	private String setBrowserProp(String mvnProp, PropRetriever prop){
-//		if (mvnProp.contains("true")){
-//			browser = System.getProperty("browser");
-//			}else {
-//				browser = prop.getProp("browser");
-//			}
 		if (System.getProperty("browser") == null) {
 			browser = prop.getProp("browser");
 		} else {
