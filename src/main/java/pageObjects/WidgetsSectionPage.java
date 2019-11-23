@@ -3,6 +3,8 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WidgetsSectionPage {
 	
@@ -25,6 +27,8 @@ public class WidgetsSectionPage {
 	}
 	
 	public WebElement getSection2Text() {
+		WebDriverWait myWait = new WebDriverWait(driver, 2000);
+		myWait.until(ExpectedConditions.visibilityOf(driver.findElement(section2Text)));
 		return driver.findElement(section2Text);
 	}
 	
