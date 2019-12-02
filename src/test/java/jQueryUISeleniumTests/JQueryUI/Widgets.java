@@ -60,6 +60,21 @@ public class Widgets extends DriverFactory {
 		log.info("Opened Section2 successfully");
 		}
 	
+	@Test (enabled=true)
+	public void test002_Autocomplete() throws InterruptedException {
+		driver.get("https://jqueryui.com/");
+		jqPage.getAutocomplete().click();
+		jqPage.switchToDemoFrame();
+		wsp.getAutoCompleteTextbox().sendKeys("java");
+		wsp.getAutoCompleteJava().click();
+		System.out.println(wsp.getAutoText());
+		Assert.assertTrue(wsp.getAutoText().contentEquals("Java"));
+		log.info("First item in list was clicked and updated autocomplete to Java as expected");
+		
+		
+		
+	}
+	
 	
 		
 		

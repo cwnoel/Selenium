@@ -21,6 +21,7 @@ public class JqueryuiPage {
 	private By sortable = By.xpath("//a[contains(text(),'Sortable')]");
 	//Widgets
 	private By accordion = By.xpath("//a[contains(text(),'Accordion')]");
+	private By autocomplete = By.xpath("//a[contains(text(),'Autocomplete')]");
 	
 	private By demoFrame = By.xpath("//iframe[@class='demo-frame']");
 	
@@ -57,6 +58,10 @@ public class JqueryuiPage {
 	//Widgets getters
 	public WebElement getAccordion() {
 		return driver.findElement(accordion);
+	}
+	
+	public WebElement getAutocomplete() {
+		return driver.findElement(autocomplete);
 	}
 	
 	public void switchToDemoFrame() {
