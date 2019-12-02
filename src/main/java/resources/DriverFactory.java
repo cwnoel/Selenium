@@ -12,58 +12,54 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class DriverFactory {
-	
 
 	private String browser;
 	private ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
-	
-	public DriverFactory(){	
+
+	public DriverFactory() {
 		PropRetriever prop = new PropRetriever();
-		String mvnBrowser = prop.getProp("mvnbrowser");
-		browser = setBrowserProp(mvnBrowser,prop);
-		
+		browser = setBrowserProp(prop);
+
 	}
 
-	public synchronized void newDriver()  {
+	public synchronized void newDriver() {
 
 		final PropRetriever prop = new PropRetriever();
 		final String browserName = browser;
 		final String remote = prop.getProp("remote");
 		final String grid = prop.getProp("grid");
 		final OptionsRetriever optRet = new OptionsRetriever();
-	
-		
 
 		if (browserName.contains("chrome")) {
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir").toString()
-					+ prop.getProp("chromedriver"));
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir").toString() + prop.getProp("chromedriver"));
 			ChromeOptions options = optRet.getChromeOptions();
 			if (remote.contains("true")) {
 				try {
-					driver.set(new RemoteWebDriver(new URL(grid),options));
+					driver.set(new RemoteWebDriver(new URL(grid), options));
 				} catch (MalformedURLException e) {
 					e.printStackTrace();
 				}
-			}else {
-		
-			driver.set(new ChromeDriver(options));
+			} else {
+
+				driver.set(new ChromeDriver(options));
 			}
 		} else if (browserName.contains("firefox")) {
-			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir").toString()
-					+ prop.getProp("geckodriver"));
+			System.setProperty("webdriver.gecko.driver",
+					System.getProperty("user.dir").toString() + prop.getProp("geckodriver"));
 			FirefoxOptions options = optRet.getFireFoxOptions();
 			if (remote.contains("true")) {
 				try {
-					driver.set(new RemoteWebDriver(new URL(grid),options));
+					driver.set(new RemoteWebDriver(new URL(grid), options));
 				} catch (MalformedURLException e) {
 					e.printStackTrace();
 				}
-			}else {
-			driver.set(new FirefoxDriver(options));
+			} else {
+				driver.set(new FirefoxDriver(options));
 			}
-		}else if (browserName.contains("edge")) {
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir").toString()
-					+ prop.getProp("msedgedriver"));
+		} else if (browserName.contains("edge")) {
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir").toString() + prop.getProp("msedgedriver"));
 			ChromeOptions options = optRet.getEdgeOptions();
 			driver.set(new ChromeDriver(options));
 		}
@@ -71,7 +67,7 @@ public class DriverFactory {
 
 	}
 
-	private String setBrowserProp(String mvnProp, PropRetriever prop){
+	private String setBrowserProp(PropRetriever prop) {
 		if (System.getProperty("browser") == null) {
 			browser = prop.getProp("browser");
 		} else {
@@ -79,7 +75,7 @@ public class DriverFactory {
 		}
 		return browser;
 	}
-	
+
 	public String getBrowser() {
 		return browser;
 	}
