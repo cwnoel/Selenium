@@ -22,6 +22,8 @@ public class JqueryuiPage {
 	//Widgets
 	private By accordion = By.xpath("//a[contains(text(),'Accordion')]");
 	private By autocomplete = By.xpath("//a[contains(text(),'Autocomplete')]");
+	private By button = By.xpath("//a[contains(text(),'Button')]");
+	private By checkboxRadio = By.xpath("//a[contains(text(),'Checkboxradio')]");
 	
 	private By demoFrame = By.xpath("//iframe[@class='demo-frame']");
 	
@@ -62,6 +64,14 @@ public class JqueryuiPage {
 	
 	public WebElement getAutocomplete() {
 		return driver.findElement(autocomplete);
+	}
+	
+	public WebElement getButton() {
+		return driver.findElement(button);
+	}
+	
+	public WebElement getCheckboxRadio() {
+		return driver.findElement(checkboxRadio);
 	}
 	
 	public void switchToDemoFrame() {

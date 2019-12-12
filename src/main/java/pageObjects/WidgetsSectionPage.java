@@ -20,7 +20,9 @@ public class WidgetsSectionPage {
 	private By section2Text = By.cssSelector("#ui-id-4 p"); 
 	private By autoCompleteText = By.cssSelector("#tags");
 	private By autoCompleteJava = By.xpath("//li[1]");
-	
+	private By widgetButtonElement = By.xpath("//button[@class='ui-button ui-corner-all ui-widget']");
+	private By newYorkRadioButton = By.xpath("//label[contains(text(),'New York')]");
+	private By hotelRatingFiveStar = By.xpath("//label[contains(text(),'5 Star')]");
 	
 	public WebElement getSection2 () {
 		return driver.findElement(section2);
@@ -45,6 +47,17 @@ public class WidgetsSectionPage {
 	JavascriptExecutor js = (JavascriptExecutor)driver;
 	String value = (String)js.executeScript("return document.getElementById('tags').value;");
 	return value;
-
+	}
+	
+	public WebElement getWidgetButtonElement() {
+		return driver.findElement(widgetButtonElement);
+	}
+	
+	public WebElement getNewYorkRadioButton() {
+		return driver.findElement(newYorkRadioButton);
+	}
+	
+	public WebElement getRatingFiveStar() {
+		return driver.findElement(hotelRatingFiveStar);
 	}
 }
