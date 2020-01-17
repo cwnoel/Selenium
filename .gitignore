@@ -2,4 +2,6 @@ target/
 test-output/
 screenshots/
 logs/
+.project
+.classpath
 
