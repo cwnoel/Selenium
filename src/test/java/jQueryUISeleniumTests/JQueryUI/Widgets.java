@@ -108,6 +108,14 @@ public class Widgets extends DriverFactory {
 		log.info("5 Star rating was checked");
 		
 	}
+	
+	@Test(enabled = true)
+	public void test005_Controlgroup() {
+		driver.get("https://jqueryui.com/");
+		jqPage.getControlgroup().click();
+		
+		
+	}
 
 	@AfterMethod(enabled = true)
 	public void getScreenshot(ITestResult result) throws IOException {

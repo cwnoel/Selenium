@@ -24,8 +24,10 @@ public class JqueryuiPage {
 	private By autocomplete = By.xpath("//a[contains(text(),'Autocomplete')]");
 	private By button = By.xpath("//a[contains(text(),'Button')]");
 	private By checkboxRadio = By.xpath("//a[contains(text(),'Checkboxradio')]");
+	private By controlGroup = By.xpath("//a[contains(text(),'Controlgroup')]");
 	
 	private By demoFrame = By.xpath("//iframe[@class='demo-frame']");
+	
 	
 	
 	//Interactions Getters
@@ -72,6 +74,10 @@ public class JqueryuiPage {
 	
 	public WebElement getCheckboxRadio() {
 		return driver.findElement(checkboxRadio);
+	}
+	
+	public WebElement getControlgroup() {
+		return driver.findElement(controlGroup);
 	}
 	
 	public void switchToDemoFrame() {
